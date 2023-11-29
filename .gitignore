@@ -3,7 +3,11 @@
 
 dataset_csv/.DS_Store
 <<<<<<< HEAD
+<<<<<<< HEAD
 *.zip
 =======
 *.zip
 >>>>>>> 0307a48 (:construction: trainable but loss strange)
+=======
+*.zip
+>>>>>>> dd09bc3 (:construction: add DNN model notebook)
