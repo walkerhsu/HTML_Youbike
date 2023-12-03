@@ -2,8 +2,4 @@
 .ipynb_checkpoints
 
 dataset_csv/.DS_Store
-<<<<<<< HEAD
 *.zip
-=======
-*.zip
->>>>>>> 0307a48 (:construction: trainable but loss strange)
