@@ -57,7 +57,7 @@ def sortbydate(data):
 data = []
 info = []
 
-directory = 'dataset_o_csv'
+directory = '../dataset_o_csv'
 for filename in os.listdir(directory):
     file = os.path.join(directory, filename)
     # checking if it is a file
@@ -80,7 +80,7 @@ for filename in os.listdir(directory):
         data = info + data
         file = file.split('/')
         # os.mkdir('dataset_filled')
-        with open('dataset_filled/' + file[1], 'w') as f:
+        with open('../dataset_filled/' + file[1], 'w') as f:
             writer = csv.writer(f)
             writer.writerows(data)
             
