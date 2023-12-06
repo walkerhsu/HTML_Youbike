@@ -50,22 +50,15 @@ complete_data = []
 hr_min = '00:00'
 
 flag = True
-# while(flag):
-    # print(hr_min)
-    # one_time_data = list(filter(lambda x: x[0].split('_')[2] == hr_min, data))
-one_time_data = data
-one_time_data.sort(key=lambda x: datetime.strptime(preprocess_date(x[0]), "%Y/%m/%d %H:%M"))
-one_time_data.sort(key=lambda x: x[0].split('_')[1])
-one_time_data = info[0] + one_time_data
 
-# complete_data.append(one_time_data)
-with open('concat.csv', 'w', newline='') as csvfile:
+data.sort(key=lambda x: datetime.strptime(preprocess_date(x[0]), "%Y/%m/%d %H:%M"))
+data.sort(key=lambda x: x[0].split('_')[1])
+data.insert(0, info[0])
+
+with open('../predictions/prediction_rnn.csv', 'w', newline='') as csvfile:
     writer = csv.writer(csvfile, delimiter=',')
-    for row in one_time_data:
+    for row in data:
         writer.writerow(row)
-    # hr_min = next_time(hr_min)
-    # flag = hr_min != '00:00'
-    # print(hr_min)
 
 
 
