@@ -3,3 +3,6 @@
 
 dataset_csv/.DS_Store
 *.zip
+
+# oscar's temp folder
+/temp/
