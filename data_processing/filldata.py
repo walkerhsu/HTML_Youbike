@@ -3,7 +3,7 @@ import os
 import datetime
 
 def preprocess_date(dateandtime):
-    print(dateandtime)
+    # print(dateandtime)
     dateandtime = dateandtime.split('_')
     return dateandtime[0][:4] + '/' + dateandtime[0][4:6] + '/' + dateandtime[0][6:8] + ' ' + dateandtime[2]
 
@@ -26,7 +26,7 @@ def filldata(data):
         nextrow = data[i + 1]
         hr = int(row[3])
         min = int(row[4])
-        while nextrow[2] != row[2] and [nextrow[3], nextrow[4]] != next_time(hr, min) and [hr, min] != [23, 40]:
+        while [nextrow[3], nextrow[4]] != next_time(hr, min) and (([hr, min] != [23, 40] and nextrow[2] != row[2])):
             # find last day data
             month = int(row[0])
             date = int(row[1])
@@ -62,8 +62,8 @@ for filename in os.listdir(directory):
     file = os.path.join(directory, filename)
     # checking if it is a file
     if os.path.isfile(file):
-        print('filename: ')
-        print(file)
+        # print('filename: ')
+        print(file.split('/')[-1])
         with open(file, 'r') as f:
             reader = csv.reader(f)
             i = 0
