@@ -6,3 +6,4 @@ dataset_csv/.DS_Store
 
 # oscar's temp folder
 /temp/
+/output/
