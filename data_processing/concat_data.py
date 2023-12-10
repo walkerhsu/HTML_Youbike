@@ -42,7 +42,7 @@ def concat_data(directory):
                     
     return data, info
 
-data, info = concat_data('../output/lstm+mse_v2')
+data, info = concat_data('../results (17)')
 # print(data[0])
 print(info[0])
 
@@ -55,7 +55,7 @@ data.sort(key=lambda x: datetime.strptime(preprocess_date(x[0]), "%Y/%m/%d %H:%M
 data.sort(key=lambda x: x[0].split('_')[1])
 data.insert(0, info[0])
 
-with open('../predictions/prediction_rnn.csv', 'w', newline='') as csvfile:
+with open('../results/prediction_lstm_v9_1_shuffle=false_1210.csv', 'w', newline='') as csvfile:
     writer = csv.writer(csvfile, delimiter=',')
     for row in data:
         writer.writerow(row)
